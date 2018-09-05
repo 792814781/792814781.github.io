@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="https://gryllsi.github.io">
   <title>gradle plugin 开发 | gryllsi的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="项目中引入自定义Gradle plugin一般有三种方法: 直接写在 build.gradle中.  plugin源码放到rootProjectDir/buildSrc/src/main/groovy目录下  plugin打包成jar, 发布到maven仓库, 然后项目通过Build Script依赖jar的形式引入   发布到jcenter项目根目录buidle.gradle12classpat">
+  <meta name="description" content="项目中引入自定义Gradle plugin一般有三种方法: 直接写在 build.gradle中. plugin源码放到rootProjectDir/buildSrc/src/main/groovy目录下 plugin打包成jar, 发布到maven仓库, 然后项目通过Build Script依赖jar的形式引入  发布到jcenter项目根目录buidle.gradle12classpath &amp;">
 <meta name="keywords" content="“Android,SDK,移动开发”">
 <meta property="og:type" content="article">
 <meta property="og:title" content="gradle plugin 开发">
 <meta property="og:url" content="https://gryllsi.github.io/2018/09/05/gradle plugin 开发/index.html">
 <meta property="og:site_name" content="gryllsi的博客">
-<meta property="og:description" content="项目中引入自定义Gradle plugin一般有三种方法: 直接写在 build.gradle中.  plugin源码放到rootProjectDir/buildSrc/src/main/groovy目录下  plugin打包成jar, 发布到maven仓库, 然后项目通过Build Script依赖jar的形式引入   发布到jcenter项目根目录buidle.gradle12classpat">
+<meta property="og:description" content="项目中引入自定义Gradle plugin一般有三种方法: 直接写在 build.gradle中. plugin源码放到rootProjectDir/buildSrc/src/main/groovy目录下 plugin打包成jar, 发布到maven仓库, 然后项目通过Build Script依赖jar的形式引入  发布到jcenter项目根目录buidle.gradle12classpath &amp;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-05T06:41:53.243Z">
+<meta property="og:updated_time" content="2018-09-05T09:41:41.509Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gradle plugin 开发">
-<meta name="twitter:description" content="项目中引入自定义Gradle plugin一般有三种方法: 直接写在 build.gradle中.  plugin源码放到rootProjectDir/buildSrc/src/main/groovy目录下  plugin打包成jar, 发布到maven仓库, 然后项目通过Build Script依赖jar的形式引入   发布到jcenter项目根目录buidle.gradle12classpat">
+<meta name="twitter:description" content="项目中引入自定义Gradle plugin一般有三种方法: 直接写在 build.gradle中. plugin源码放到rootProjectDir/buildSrc/src/main/groovy目录下 plugin打包成jar, 发布到maven仓库, 然后项目通过Build Script依赖jar的形式引入  发布到jcenter项目根目录buidle.gradle12classpath &amp;">
   
     <link rel="alternative" href="/atom.xml" title="gryllsi的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="http://tupian.qqjay.com/u/2013/1030/25_84154_3.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -44,11 +44,11 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay" style="background: #7ed4f9"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://img5.imgtn.bdimg.com/it/u=1934952861,3453579486&amp;fm=27&amp;gp=0.jpg" class="js-avatar">
+			<img src="/assets/img/avatar.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">gryllsi.tu</a></h1>
@@ -61,6 +61,10 @@
 			<ul>
 			
 				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/Android/">Android</a></li>
+	        
+				<li><a href="/tags/Java/">Java</a></li>
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
 	        
@@ -84,13 +88,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/gryllsi" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="weibo" target="_blank" href="https://weibo.com/u/2576469871?refer_flag=1001030201_" title="weibo"><i class="icon-weibo"></i></a>
 		        
 			</div>
 		</nav>
@@ -101,14 +101,14 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" style="background: #7ed4f9"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://img5.imgtn.bdimg.com/it/u=1934952861,3453579486&amp;fm=27&amp;gp=0.jpg" class="js-avatar">
+				<img src="/assets/img/avatar.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">gryllsi.tu</h1>
@@ -122,29 +122,33 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/gryllsi" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="weibo" target="_blank" href="https://weibo.com/u/2576469871?refer_flag=1001030201_" title="weibo"><i class="icon-weibo"></i></a>
 			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 25%"><a href="/tags/Android/">Android</a></li>
+		        
+					<li style="width: 25%"><a href="/tags/Java/">Java</a></li>
+		        
+					<li style="width: 25%"><a href="/tags/随笔/">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -180,12 +184,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="项目中引入自定义Gradle-plugin一般有三种方法"><a href="#项目中引入自定义Gradle-plugin一般有三种方法" class="headerlink" title="项目中引入自定义Gradle plugin一般有三种方法:"></a>项目中引入自定义Gradle plugin一般有三种方法:</h2><ol>
-<li><p>直接写在 build.gradle中.</p>
-</li>
-<li><p>plugin源码放到rootProjectDir/buildSrc/src/main/groovy目录下</p>
-</li>
-<li><p>plugin打包成jar, 发布到maven仓库, 然后项目通过Build Script依赖jar的形式引入</p>
-</li>
+<li>直接写在 build.gradle中.</li>
+<li>plugin源码放到rootProjectDir/buildSrc/src/main/groovy目录下</li>
+<li>plugin打包成jar, 发布到maven仓库, 然后项目通过Build Script依赖jar的形式引入</li>
 </ol>
 <h2 id="发布到jcenter"><a href="#发布到jcenter" class="headerlink" title="发布到jcenter"></a>发布到jcenter</h2><p>项目根目录buidle.gradle<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">classpath &apos;com.github.dcendents:android-maven-gradle-plugin:1.5&apos;</span><br><span class="line">classpath &apos;com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3&apos;</span><br></pre></td></tr></table></figure></p>
 <p>Module build.gradle 文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: &apos;groovy&apos;</span><br><span class="line">apply plugin: &apos;maven&apos;</span><br><span class="line"></span><br><span class="line">//修改了再发布</span><br><span class="line">//apply from: &apos;bintray.gradle&apos;</span><br><span class="line">apply from: &apos;maven.gradle&apos;</span><br></pre></td></tr></table></figure></p>
@@ -207,6 +208,16 @@
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpeg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/Wechat.jpeg">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
@@ -314,6 +325,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#项目中引入自定义Gradle-plugin一般有三种方法"><span class="toc-number">1.</span> <span class="toc-text">项目中引入自定义Gradle plugin一般有三种方法:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发布到jcenter"><span class="toc-number">2.</span> <span class="toc-text">发布到jcenter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意事项"><span class="toc-number">3.</span> <span class="toc-text">注意事项</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -425,7 +449,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">司马家族 三国</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -516,7 +544,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">我是一个搬砖狂，搬砖本领。&lt;br&gt;&lt;br&gt;总有一天心血来潮，倒在砖头旁。</div>
   	  	
     	</section>
     
